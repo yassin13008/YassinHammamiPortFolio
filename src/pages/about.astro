@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="A propos de moi | Yassin Hammami" description="A propos de Yassin Hammami ">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="A propos de Moi"
+				tagline="Merci de vous être arreté sur ma page perso. Je vous laisse lire si vous voulez en savoir plus sur moi ."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/profil2.jpg"
+					alt="Yassin Hammami page perso"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Ma petite histoire</h2>
+				<div class="content">
+					<p>
+						Prenons un décor un peu plus détendu voulez vous ? </br>
+						Avant d'arriver à ce que je suis aujourd'hui, je suis passé par beaucoup d'étape dans ma petite vie.
+						De serveur à l'étranger en passant par le secteur de la logistique, j'ai fais beaucoup de métier différent les uns des autres
+						Mais un point en commun les réunis tous : </br> <strong>L'envie d'apprendre et de découvrir !!! </strong>
+					</p>
+					</br>
+					<p>
+						Lorsque l'on ma parlé du développement web, je n'étais pas emballé à la base, moi qui aimais découvrir de nouvelles choses, j'avais le sentiment que j'allais rester dans un bureau et ne rien apprendre.
+						Je m'étais trompé sur toute la ligne. Chaque jour, j'en apprends sur ce métier comme si y avait toujours une découverte.
+						Mais encore, j'en ai appris bien plus aussi sur moi même. Lorsqu'on réussi à se débeuguer où qu'on assimile petit à petit une nouvelle technologie, cela boost la confiance mais aussi l'envie d'aller chercher plus loin et ne pas rester à son point de départ.
+						Finalement c'est comme si on voyagait, on découvre et on apprends des autres et on en apprend sur soi  !!!
+					</p>
+					</br>
+					<p>
+						En ayant sauté le pas, j'ai rencontré des personnes formidables, qui m'ont fait découvrir ce métier par une autre facette. Je ne m'attendais pas à celà ! Ce métier est si preneur. 
+						Mais je garde les pieds sur terre. Il faut savoir prendre aussi des pauses. J'ai moins de risque d'arriver à saturation de cette manière là.
+						Dans tous les cas, c'est un métier qui me passionne de plus en plus et j'ai bien l'intention d'y faire carriere ! 
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Mes formations</h2>
+				<div class="content">
+					<p>Ecole WebForce3 : </br> Octobre 2022 - février 2023 <br> Développeur Web et Web Mobile </p>
+				</div>
+				<div class="content">
+					<p>Formation en initial</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Mes expériences </h2>
+				<div class="content">
+					<p>Start-Up Cs-Lane : </br> Fevrier 2023 - Avril 2023 <br> Mission de développeur back-end en stage </p>
+					<p>J'ai été amené à coder un système de réservation sur certains projets en php et en symfony, présent sur mon github </p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Mes compétences </h2>
+				<div class="content">
+					<p>Maitrise des outils suivants : HTML, CSS, Javascript, MySQL, PHP et SYMFONY</p>
+					<p>Apprentissage des outils à venir : Réact, Dockers, TypeScript et Angular</p>
+				</div>
+			</section>
+		</main>
+			<section>
+				<h2 class="section-title">A l'heure d'aujourdh'u</h2>
+				<div class="content">
+					<p>Actuellement, je suis à la recherche d'un contrat en alternance </br>
+					Avec toutes ses expériences acquises, je ressents le besoin non seulement de solidifier mes acquis mais aussi de pousser mon apprentisage </br>					De développeur d'application tout comme développeur CMS, je suis actuellement en travail sur la réalisation de certains projets </p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
